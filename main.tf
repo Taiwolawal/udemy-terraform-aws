@@ -103,7 +103,7 @@ output "ec2_public_ip" {
 
 resource "aws_key_pair" "ssh-key" {
   key_name   = "server-key"
-  public_key = var.public_key
+  public_key = var.public_key  
 }
 
 resource "aws_instance" "myapp-server" {
@@ -122,6 +122,11 @@ resource "aws_instance" "myapp-server" {
   }
 }
 
+
+# resource "aws_security_group" "myapp-sg" {
+#   name = "myapp-sg"
+#   vpc_id = aws_vpc.myapp-vpc.id
+# }
     
 
 # resource "aws_route_table" "myapp-route-table" {
@@ -142,4 +147,4 @@ resource "aws_instance" "myapp-server" {
 #   route_table_id = aws_route_table.myapp-route-table.id
 # }
 
- 
+  
